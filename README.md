@@ -142,8 +142,8 @@ Dans ces cas, une alerte est affichée à l’utilisateur.
 
 - Le parse d’URL repose sur un identifiant numérique en fin d’URL.
 - Le nombre de tests en échec récupérés est limité à 100 (`count=100`).
-- `manifest_version: 2` est utilisé (legacy) : plusieurs navigateurs/plateformes ont déjà retiré ou restreint le support MV2, la migration vers Manifest V3 doit donc être considérée comme nécessaire.
-- La copie repose sur `document.execCommand('copy')`, API historique et dépréciée ; la cible recommandée est l’API Clipboard moderne (`navigator.clipboard`).
+- `manifest_version: 2` est utilisé (legacy) : le support dépend du navigateur (ex: restrictions fortes côté Chrome/Chromium, support encore présent côté Firefox), la migration vers Manifest V3 doit donc être considérée comme nécessaire.
+- La copie repose actuellement sur `document.execCommand('copy')` (implémentation de `popup.js`), API historique et dépréciée ; la cible recommandée est l’API Clipboard moderne (`navigator.clipboard`).
 
 ---
 
