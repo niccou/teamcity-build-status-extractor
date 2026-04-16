@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "TeamCity Build Status Extractor",
+  "version": "1.0.0",
+  "description": "Copie les résultats de build TeamCity pour Microsoft Teams.",
+  "permissions": ["activeTab", "clipboardWrite"],
+  "browser_action": {
+    "default_title": "Copier le statut TeamCity",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icon-48.png"
+    }
+  },
+  "icons": {
+    "48": "icon-48.png"
+  }
+}
