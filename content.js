@@ -1,11 +1,13 @@
 (function () {
+  const api = typeof browser !== 'undefined' ? browser : chrome;
+
   if (window.__teamCityExtractorListenerRegistered) {
     return;
   }
   window.__teamCityExtractorListenerRegistered = true;
 
   function getBuildIdFromUrl(url) {
-    const match = url.match(/\/(\d+)(?:[/?#]|$)/);
+    const match = url.match(/\/(\d+)\/?(?:[?#].*)?$/);
     return match ? match[1] : null;
   }
 
@@ -91,7 +93,7 @@
     }
   }
 
-  chrome.runtime.onMessage.addListener(function (message, _sender, sendResponse) {
+  api.runtime.onMessage.addListener(function (message, _sender, sendResponse) {
     if (!message || message.action !== 'extractTeamCityBuildStatus') {
       return;
     }
